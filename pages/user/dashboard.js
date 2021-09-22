@@ -5,9 +5,9 @@ import { makeStyles, } from '@mui/styles'
 import Button from '@mui/material/Button'
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
-    padding: '8px 0 6px'
+    padding: theme.spacing(8, 0, 6),
   },
   cardMedia:{
     paddingTop: '56%',
