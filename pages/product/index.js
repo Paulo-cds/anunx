@@ -1,6 +1,6 @@
 import { Avatar, Card, CardHeader, CardMedia, Chip, Container, Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
-import TemplateDefault from '../src/templates/Default'
+import TemplateDefault from '../../src/templates/Default'
 import { makeStyles, } from '@mui/styles'
 import Carousel from 'react-material-ui-carousel'
 
