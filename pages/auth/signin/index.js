@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/styles';
+import {makeStyles} from '@mui/styles'
 
 const useStyles = makeStyles((theme) =>  ({
   root: {
@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) =>  ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: 'black',
   },
 }));
 
