@@ -125,7 +125,8 @@ const Signup = () => {
                                                 ) : (
                                                     <Button
                                                         type='submit'
-                                                        fullWidthvariant='contained'
+                                                        fullWidth
+                                                        variant='contained'
                                                         color='primary'
                                                         className={classes.submit}                                                
                                                     >
