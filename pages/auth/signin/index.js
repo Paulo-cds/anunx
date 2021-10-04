@@ -2,9 +2,9 @@ import TemplateDefault from '../../../src/templates/Default'
 import { Formik } from 'formik'
 import useStyles from './styles'
 import { initialValues, validationSchema } from './formValues'
-import axios from 'axios'
 import useToasty from '../../../src/contexts/Toasty'
 import {useRouter} from 'next/router'
+import {signIn, session} from 'next-auth/client'
 
 import {
     Container,
@@ -16,6 +16,7 @@ import {
     FormHelperText,
     Button,
     CircularProgress,
+    Alert,
 } from '@mui/material'
 
 const Signin = () => {
@@ -23,7 +24,14 @@ const Signin = () => {
     const router = useRouter()
     const { setToasty } = useToasty()
 
+    console.log(session)
+
     const handleFormSubmit = async values => {
+        signIn('credentials', {
+            email: values.email,
+            password: values.password,
+            callbackUrl: 'http://localhost:3000/user/dashboard'
+        })
         
     }
 
@@ -54,7 +62,15 @@ const Signin = () => {
                                 }) => {
                                     return(
                                         <form onSubmit={handleSubmit}>                                            
-
+                                            {
+                                                router.query.i === '1'
+                                                    ? (
+                                                        <Alert severity='error' className={classes.errorMessage}>
+                                                            Usuário ou senha inválidos
+                                                        </Alert>
+                                                    )
+                                                    : null
+                                            }
                                             <FormControl fullWidth error={errors.email && touched.email} className={classes.formControl}>
                                                 <InputLabel >Email</InputLabel>
                                                 <Input
